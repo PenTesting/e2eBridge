@@ -24,7 +24,8 @@
     "ethereumjs-vm": "2.3.2",
     "log4js": "0.6.37",
     "rlp": "2.0.0",
-    "sha3": "1.2.0"
+    "sha3": "1.2.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "mocha": "^2.3.0",
@@ -45,6 +46,9 @@
   "scripts": {
     "start": "node index follow",
     "setup": "node index setup",
-    "test": "find . -regex '.*/tests/.*/.*.js' | xargs mocha"
-  }
+    "test": "find . -regex '.*/tests/.*/.*.js' | xargs mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
